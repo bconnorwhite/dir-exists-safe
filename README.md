@@ -1,5 +1,7 @@
 <div align="center">
-  <h1>dir-exists-safe</h1>
+  <a href="https://github.com/bconnorwhite/dir-exists-safe">
+    <img alt="dir-exists-safe" src="assets/header.svg" />
+  </a>
   <a href="https://npmjs.com/package/dir-exists-safe">
     <img alt="NPM" src="https://img.shields.io/npm/v/dir-exists-safe.svg">
   </a>
@@ -19,11 +21,11 @@
 
 <br />
 
-> Check if a directory exists without a try catch.
+> Check if a directory exists without try catch.
 
 - Returns `true` if the path exists and is a directory.
 - Returns `false` if the path is not a directory, or does not exist.
-- Returns `undefined` for other errors (for example, permission denied) rather than throwing.
+- Returns `undefined` on other errors (for example, permission denied) rather than throwing.
 
 ## Installation
 
@@ -60,6 +62,9 @@ function dirExistsSync(path: string): boolean | undefined;
 
 [MIT](https://opensource.org/licenses/MIT)
 
+<br />
+
 ## Related Packages
 
+- [fs-safe](https://www.npmjs.com/package/fs-safe): A simple fs wrapper that doesn't throw
 - [file-exists-safe](https://www.npmjs.com/package/file-exists-safe): Check if a file exists without a try catch
