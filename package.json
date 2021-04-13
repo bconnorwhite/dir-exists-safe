@@ -13,7 +13,21 @@
     "type": "git",
     "url": "git+https://github.com/bconnorwhite/dir-exists-safe.git"
   },
-  "keywords": [],
+  "keywords": [
+    "dir",
+    "directory",
+    "file",
+    "folder",
+    "exists",
+    "exist",
+    "check",
+    "if",
+    "safe",
+    "without",
+    "try",
+    "catch",
+    "fs-safe"
+  ],
   "files": [
     "build"
   ],
