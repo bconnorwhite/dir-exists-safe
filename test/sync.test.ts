@@ -14,7 +14,7 @@ beforeEach(async () => {
         test: {}
       }
     })
-  })
+  });
 });
 
 afterEach(async () => {
