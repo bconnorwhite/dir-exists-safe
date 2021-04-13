@@ -40,11 +40,18 @@ npm install dir-exists-safe
 ## API
 
 ```ts
-import { dirExists, dirExistsSync } from "dir-exists-safe";
+import { dirExists, dirExistsSync, Options } from "dir-exists-safe";
 
-function dirExists(path: string): Promise<boolean | undefined>;
+function dirExists(path: string, options?: Options): Promise<boolean | undefined>;
 
-function dirExistsSync(path: string): boolean | undefined;
+function dirExistsSync(path: string, options?: Options): boolean | undefined;
+
+type Options = {
+  /**
+   * Return true if path is file. Default: `false`
+   */
+  includeFiles?: boolean;
+}
 ```
 
 <br />

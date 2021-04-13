@@ -1,11 +1,12 @@
 import { test, expect } from "@jest/globals";
 import mock, { restore, directory } from "mock-fs";
-import { dirExists, dirExistsSync } from "../source";
+import { dirExists } from "../source";
 
 beforeEach(async () => {
   mock({
     "/test": {
-      notes: {}
+      notes: {},
+      file: "test"
     },
     "/no-access": directory({
       mode: 0,
@@ -32,20 +33,20 @@ test("basic not exists", async () => {
   });
 });
 
+test("file", async () => {
+  return dirExists("/test/file").then((exists) => {
+    expect(exists).toBe(false);
+  });
+});
+
+test("file included", async () => {
+  return dirExists("/test/file", { includeFiles: true }).then((exists) => {
+    expect(exists).toBe(true);
+  });
+});
+
 test("basic no access", async () => {
   return dirExists("/no-access/test").then((exists) => {
     expect(exists).toBe(undefined);
   });
-});
-
-test("basic sync exists", () => {
-  expect(dirExistsSync("/test")).toBe(true);
-});
-
-test("basic sync not exists", () => {
-  expect(dirExistsSync("/no-exists")).toBe(false);
-});
-
-test("basic sync not exists", () => {
-  expect(dirExistsSync("/no-access/test")).toBe(undefined);
 });
